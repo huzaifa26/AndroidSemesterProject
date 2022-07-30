@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NewsYard</string>
+    <string name="menuCreate">Create</string>
+    <string name="menuAbout">About</string>
+    <string name="app_developed_by">APP DEVELOPED BY</string>
+    <string name="huzaifa_abid">Huzaifa Abid</string>
+    <string name="abdul_haseeb_khan">Abdul Haseeb Khan</string>
+    <string name="imad_ahmed">Imad Ahmed</string>
+    <string name="khanzada_haider_ali">Khanzada Haider Ali</string>
+    <string name="fahad_afzal">Fahad Afzal</string>
+    <string name="hamza_mushtaq">Hamza Mushtaq</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

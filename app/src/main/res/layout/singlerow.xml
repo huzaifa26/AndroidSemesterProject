@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:elevation="4dp"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/t3"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is header text"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_toRightOf="@id/img1"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/images" />
+        <!--app:shapeAppearanceOverlay="@style/roundImageView"-->
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is description m dds jhsd  fjhsd fh shf sjh fsjf sjhf sjh fshf jhsd fshjd fsdjhf sdjhf jhds fhjdsfhs fhs fhsjf hs fhs fshj sdhj fsh shdf shf shjf jsh fhjds fhsdjf hjsdf s text"
+            android:textSize="20dp"
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/t2"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
