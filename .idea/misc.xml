@@ -17,6 +17,8 @@
         <entry key="..\:/Users/HAIER/AndroidStudioProjects/app/src/main/java/com/SemesterProjectAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1535" />
         <entry key="..\:/Users/HAIER/AndroidStudioProjects/app/src/main/java/com/SemesterProjectAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/ic_baseline_post_add_24.xml" value="0.1145" />
+        <entry key="app/src/main/res/layout/activity_about.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_create_news.xml" value="0.5284974093264249" />
         <entry key="app/src/main/res/layout/activity_edit_news.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_edit.xml" value="0.19375" />

@@ -1,6 +1,7 @@
 package com.example.semesterprojectandroid;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
@@ -97,10 +99,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public void onCreateContextMenu(ContextMenu contextMenu, View v, ContextMenu.ContextMenuInfo contextMenuInfo) {
             MenuItem edit= (MenuItem) contextMenu.add(this.getAdapterPosition(),0, 0, "Edit");
             MenuItem delete= (MenuItem) contextMenu.add(this.getAdapterPosition(),0,  0, "Delete");
-            MenuItem share= (MenuItem) contextMenu.add(this.getAdapterPosition(),0,  0, "Share");
             edit.setOnMenuItemClickListener(onContextClickListener);
             delete.setOnMenuItemClickListener(onContextClickListener);
-            share.setOnMenuItemClickListener(onContextClickListener);
         }
 
         private final MenuItem.OnMenuItemClickListener onContextClickListener = new MenuItem.OnMenuItemClickListener() {
@@ -115,33 +115,48 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     b2.putString("date",temp.getDate());
                     b2.putByteArray("image", temp.getBitmap());
 
-
                     Intent intent1=new Intent(context,EditNews.class);
                     intent1.putExtras(b2);
                     intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent1);
-
-//                    MainActivity ma=new MainActivity();
-//                    ma.getData(temp.getImgname(),temp.getDesc(),temp.getDate(),temp.getBitmap());
-
-//                    FragmentManager fm=((AppCompatActivity)context).getSupportFragmentManager();
-//                    FragmentTransaction ft=fm.beginTransaction();
-//                    EditFragment ef=new EditFragment();
-//                    ef.setArguments(b2);
-//                    ft.add(R.id.recyclerView1,ef);
-//                    ft.commit();
                 }
 
                 if (item.getTitle() == "Delete") {
-                    Toast.makeText(context,"Delete",Toast.LENGTH_SHORT).show();
-                    int clickedItemPosition = item.getOrder();
+                    int clickedItemPosition = item.getGroupId();
                     Model temp = data.get(clickedItemPosition);
-                    String name=temp.getImgname();
+                    String name=temp.getDesc();
                     System.out.println(name);
-                }
+                    DbHandler db=new DbHandler(context.getApplicationContext(), "",null,1);
 
-                if (item.getTitle() == "Share") {
-                    Toast.makeText(context,"Share",Toast.LENGTH_SHORT).show();
+                    AlertDialog alertDialog = new AlertDialog.Builder(itemView.getContext()).create();
+                    alertDialog.setTitle("Delete Alert");
+                    alertDialog.setMessage("Are you sure you want do delete this news?");
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    db.delete_news(name);
+                                    Intent intent3 = new Intent(context,MainActivity.class);
+                                    intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    context.startActivity(intent3);
+                                    Toast.makeText(context,"Deleted",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+
+
+                    alertDialog.show();
+
+
+//                    db.delete_news(name);
+//                    Intent intent3 = new Intent(context,MainActivity.class);
+//                    intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    context.startActivity(intent3);
                 }
                 return true;
             }

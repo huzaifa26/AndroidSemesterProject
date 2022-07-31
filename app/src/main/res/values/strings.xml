@@ -3,12 +3,13 @@
     <string name="menuCreate">Create</string>
     <string name="menuAbout">About</string>
     <string name="app_developed_by">APP DEVELOPED BY</string>
-    <string name="huzaifa_abid">Huzaifa Abid</string>
-    <string name="abdul_haseeb_khan">Abdul Haseeb Khan</string>
-    <string name="imad_ahmed">Imad Ahmed</string>
-    <string name="khanzada_haider_ali">Khanzada Haider Ali</string>
-    <string name="fahad_afzal">Fahad Afzal</string>
-    <string name="hamza_mushtaq">Hamza Mushtaq</string>
+    <string name="abdul_haseeb_khan">Abdul Haseeb Khan SP19-BCS-001</string>
+    <string name="fahad_afzal">Fahad Afzal  SP19-BCS-006</string>
+    <string name="hamza_mushtaq">Hamza Mushtaq  SP19-BCS-007</string>
+    <string name="imad_ahmed">Imad Ahmed  SP19-BCS-011</string>
+    <string name="khanzada_haider_ali">Khanzada Haider Ali  SP19-BCS-013</string>
+    <string name="huzaifa_abid">Syed Huzaifa Abid  SP19-BCS-025</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

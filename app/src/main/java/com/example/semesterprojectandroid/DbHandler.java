@@ -24,7 +24,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS STUDENTS;");
+        db.execSQL("DROP TABLE IF EXISTS newspaper;");
         onCreate(db);
     }
 
@@ -60,6 +60,23 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         //Returns an Arraylist to MyAdapter object constructor inside MainActivity
         return data;
+    }
 
+    public void update_news(String oldtitle,byte[] picture, String title,String description){
+        ContentValues values = new ContentValues();
+        values.put("title", title);
+        values.put("description", description);
+        values.put("picture", picture);
+
+        System.out.println(oldtitle);
+        System.out.println(title);
+        System.out.println(description);
+//        this.getWritableDatabase().rawQuery("UPDATE newspaper SET title='"+title+"',description='"+description+"',picture='"+picture +"' WHERE title='"+oldtitle+"'");
+        this.getWritableDatabase().update("newspaper",values,"title = '" + oldtitle + "'",null);
+    }
+
+    public void delete_news(String title){
+        System.out.println(title);
+        this.getWritableDatabase().delete("newspaper","title='"+title+"'",null);
     }
 }

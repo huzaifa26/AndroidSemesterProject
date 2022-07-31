@@ -15,7 +15,6 @@ public class About extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         overridePendingTransition(R.anim.slide_stay, R.anim.slide_out_up);
     }
 }

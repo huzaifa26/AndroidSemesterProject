@@ -86,13 +86,4 @@ public class MainActivity extends AppCompatActivity {
             cardView = itemView.findViewById(R.id.card);
         }
     }
-
-    public void getData(String imgName, String description,String date, byte[] img){
-        Bundle b2=new Bundle();
-        b2.putString("title",imgName);
-        b2.putString("description",description);
-        b2.putString("date",date);
-        b2.putByteArray("image",img);
-    }
-
 }
